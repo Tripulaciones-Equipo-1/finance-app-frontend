@@ -1,0 +1,15 @@
+.topbar {
+  display: flex;
+  align-items: center;
+
+  height: 60px;
+  position: relative;
+  margin-bottom: 5px;
+
+  background-color: $primary-text-color;
+  border-bottom: 2px solid $primary-color;
+
+  &__text {
+    color: $ternary-text-color;
+  }
+}
