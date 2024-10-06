@@ -1,7 +1,14 @@
 import React from "react";
+import Topbar from "../../components/topbar/Topbar";
 
 const Login = () => {
-  return <div>Login</div>;
+  return (
+    <div>
+      <Topbar />
+
+      <p>Login</p>
+    </div>
+  );
 };
 
 export default Login;
