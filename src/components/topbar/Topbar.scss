@@ -2,14 +2,17 @@
   display: flex;
   align-items: center;
 
+  position: sticky;
+  top: 0;
+
   height: 60px;
-  position: relative;
   margin-bottom: 5px;
 
   background-color: $primary-text-color;
   border-bottom: 2px solid $primary-color;
 
   &__text {
+    font-weight: bold;
     color: $ternary-text-color;
   }
 }
