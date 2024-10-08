@@ -12,7 +12,11 @@ const Topbar = ({ path, title }) => {
           <img src={arrowIcon} alt="go back icon" />
         </a>
       )}
-      {title ? <p className="topbar__text">Topbar</p> : "me"}
+      {title ? (
+        <p className="topbar__text">Topbar</p>
+      ) : (
+        <p className="topbar__text">me</p>
+      )}
     </section>
   );
 };
