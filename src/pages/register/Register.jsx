@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { register } from "../../redux/auth/authSlice";
+import { validDNI } from "../../utils/validations";
 
 import Topbar from "../../components/topbar/Topbar";
 import Loader from "../../components/loader/Loader";
@@ -45,7 +46,7 @@ const Register = () => {
       errorList.email = "Introduce un email valido.";
     }
 
-    if (dni.length !== 9) {
+    if (dni.length !== 9 || !validDNI(dni)) {
       errorList.dni = "El DNI es incorrecto.";
     }
 
