@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Topbar from "../../components/topbar/Topbar";
-import ClipLoader from "react-spinners/ClipLoader";
+import Loader from "../../components/loader/Loader";
 
 import "./Register.scss";
 
@@ -13,9 +13,8 @@ const Register = () => {
     repeat: "",
   };
 
-  const [loading, setLoading] = useState(false);
-
   const [formData, setFormData] = useState(initialState);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -30,77 +29,68 @@ const Register = () => {
 
   return (
     <>
-      {loading ? (
-        <div className="loader">
-          <ClipLoader
-            color="#e30613"
-            speedMultiplier={0.8}
-            size={80}
-            aria-label="Cargando"
-          />
-        </div>
-      ) : (
-        <div className="page">
-          <Topbar />
+      <Loader loading={loading} />
 
-          <section className="register">
-            <div className="register__container">
-              <p className="register__title">Regístrate en la banca Online</p>
+      <div className="page">
+        <Topbar />
 
-              <form onSubmit={handleSubmit} className="register__form">
-                <input
-                  name="name"
-                  type="text"
-                  placeholder="Nombre"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="register__input"
-                />
-                <input
-                  name="email"
-                  type="text"
-                  placeholder="Email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="register__input"
-                />
-                <input
-                  name="dni"
-                  type="text"
-                  placeholder="DNI"
-                  value={formData.dni}
-                  onChange={handleChange}
-                  className="register__input"
-                />
-                <input
-                  name="password"
-                  type="password"
-                  placeholder="Clave"
-                  value={formData.password}
-                  onChange={handleChange}
-                  className="register__input"
-                />
-                <input
-                  name="repeat"
-                  type="password"
-                  placeholder="Repite Clave"
-                  value={formData.repeat}
-                  onChange={handleChange}
-                  className="register__input"
-                />
+        <section className="register">
+          <div className="register__container">
+            <p className="register__title">Regístrate en la banca Online</p>
 
-                <button type="submit" className="register__submit">
-                  Registrarse
-                </button>
-              </form>
+            <form onSubmit={handleSubmit} className="register__form">
+              <input
+                name="name"
+                type="text"
+                placeholder="Nombre"
+                value={formData.name}
+                onChange={handleChange}
+                className="register__input"
+              />
+              <input
+                name="email"
+                type="text"
+                placeholder="Email"
+                value={formData.email}
+                onChange={handleChange}
+                className="register__input"
+              />
+              <input
+                name="dni"
+                type="text"
+                placeholder="DNI"
+                value={formData.dni}
+                onChange={handleChange}
+                className="register__input"
+              />
+              <input
+                name="password"
+                type="password"
+                placeholder="Clave"
+                value={formData.password}
+                onChange={handleChange}
+                className="register__input"
+              />
+              <input
+                name="repeat"
+                type="password"
+                placeholder="Repite Clave"
+                value={formData.repeat}
+                onChange={handleChange}
+                className="register__input"
+              />
 
-              <p className="register__link">
-                <a href="/login">Ya tengo cuenta</a>
-              </p>
-            </div>
-          </section>
-        </div>
-      )}
+              <button type="submit" className="register__submit">
+                Registrarse
+              </button>
+            </form>
+
+            <p className="register__link">
+              <a href="/login">Ya tengo cuenta</a>
+            </p>
+          </div>
+        </section>
+      </div>
     </>
   );
 };
