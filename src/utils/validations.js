@@ -30,7 +30,6 @@ export const validDNI = (dni) => {
   const nieNum = nie.indexOf(dni[0]);
   if (nieNum !== -1) copy[0] = nieNum;
   copy = copy.join("");
-  console.log(copy);
 
   const num = Number(copy.slice(0, 8));
   const letter = copy.slice(8, 9);

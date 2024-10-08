@@ -65,7 +65,10 @@ const Register = () => {
   // HANDLERS
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({
+      ...prev,
+      [name]: name === "dni" ? value.toUpperCase() : value,
+    }));
   };
 
   const handleSubmit = (event) => {
