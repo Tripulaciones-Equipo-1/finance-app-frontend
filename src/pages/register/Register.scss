@@ -27,15 +27,29 @@
   }
 
   &__input {
+    width: 100%;
     padding: 10px 3px;
-    border: 2px solid $secondary-text-color;
-    border-radius: 5px;
-    outline: none;
     font-size: 14px;
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid $secondary-text-color;
+    background-color: $background-color-focus;
 
     &::placeholder {
       font-size: 14px;
     }
+
+    &--error {
+      border: 2px solid $error-color;
+    }
+  }
+
+  &__error {
+    padding-top: 2px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: $error-color;
   }
 
   &__submit {
@@ -50,4 +64,8 @@
     margin-top: 20px;
     text-align: center;
   }
+}
+
+.debug {
+  background-color: aqua;
 }
