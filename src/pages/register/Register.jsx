@@ -86,7 +86,7 @@ const Register = () => {
       <Loader loading={isLoading} />
 
       <div className="page">
-        <Topbar />
+        <Topbar path={"/login"} />
 
         <section className="register">
           <div className="register__container">

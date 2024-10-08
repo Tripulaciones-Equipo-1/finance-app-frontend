@@ -1,6 +1,7 @@
 .topbar {
   display: flex;
   align-items: center;
+  justify-content: center;
 
   position: sticky;
   top: 0;
@@ -9,10 +10,22 @@
   margin-bottom: 5px;
 
   background-color: $primary-text-color;
-  border-bottom: 2px solid $primary-color;
+  border-bottom: 3px solid $primary-color;
+
+  &__back {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 5px;
+
+    img {
+      width: 30px;
+    }
+  }
 
   &__text {
     font-weight: bold;
+    font-size: 18px;
     color: $ternary-text-color;
   }
 }
