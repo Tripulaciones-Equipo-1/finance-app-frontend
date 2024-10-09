@@ -37,9 +37,20 @@ export const authSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(register.pending, (state) => {
-      state.isLoading = true;
-    });
+    builder
+      .addCase(register.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(register.fulfilled, (state, action) => {
+        console.log(action.payload);
+        state.isSuccess = true;
+      })
+      .addCase(register.rejected, (state, action) => {
+        console.log(action.payload);
+        state.isError = true;
+        state.isLoading = false;
+        state.message = "El correo o DNI ya ha sido utilizado.";
+      });
   },
 });
 

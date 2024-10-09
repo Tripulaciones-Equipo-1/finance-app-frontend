@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { register } from "../../redux/auth/authSlice";
+import { useNavigate } from "react-router-dom";
+import { register, reset } from "../../redux/auth/authSlice";
 import { validDNI } from "../../utils/validations";
 
 import Topbar from "../../components/topbar/Topbar";
@@ -27,8 +28,17 @@ const Register = () => {
   const [formData, setFormData] = useState(initialState);
   const [errors, setErrors] = useState({});
 
+  const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { isLoading } = useSelector((state) => state.auth);
+  const { isSuccess, isError, isLoading, message } = useSelector(
+    (state) => state.auth,
+  );
+
+  useEffect(() => {
+    if (!isSuccess) return;
+    dispatch(reset());
+    navigate("/login");
+  }, [isSuccess]);
 
   // VALIDATION
   const validateForm = () => {
@@ -91,6 +101,8 @@ const Register = () => {
         <section className="register">
           <div className="register__container">
             <p className="register__title">Regístrate en la banca Online</p>
+
+            <p className="register__error">{message}</p>
 
             <form onSubmit={handleSubmit} className="register__form">
               <div>
