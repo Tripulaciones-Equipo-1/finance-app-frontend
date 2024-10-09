@@ -25,6 +25,18 @@ export const register = createAsyncThunk(
   },
 );
 
+export const login = createAsyncThunk(
+  "auth/login",
+  async (userData, { rejectWithValue }) => {
+    try {
+      return await authService.login(userData);
+    } catch (error) {
+      console.error("Login error: ", error);
+      return rejectWithValue(error.response.data);
+    }
+  },
+);
+
 export const authSlice = createSlice({
   name: "auth",
   initialState,
@@ -50,6 +62,20 @@ export const authSlice = createSlice({
         state.isError = true;
         state.isLoading = false;
         state.message = "El correo o DNI ya ha sido utilizado.";
+      })
+
+      .addCase(login.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(login.fulfilled, (state, action) => {
+        console.log(action.payload);
+        state.isSuccess = true;
+      })
+      .addCase(login.rejected, (state, action) => {
+        console.log(action.payload);
+        state.isError = true;
+        state.isLoading = false;
+        state.message = "El DNI o contraseña son incorrectos.";
       });
   },
 });
