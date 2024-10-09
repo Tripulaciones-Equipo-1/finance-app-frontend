@@ -1,0 +1,31 @@
+.accounts {
+  height: 100%;
+
+  &__title {
+    margin-bottom: 5px;
+    text-align: center;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  &__section {
+    padding: 5px 10px;
+    color: $ternary-text-color;
+    background-color: $secondary-text-color;
+  }
+
+  &__data {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+
+    border: 1px solid $secondary-text-color;
+  }
+
+  &__id {
+    font-size: 12px;
+    color: $secondary-text-color;
+  }
+}

@@ -4,12 +4,15 @@ import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 import MainLayout from "./layouts/MainLayout";
+import Accounts from "./pages/accounts/Accounts";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<MainLayout />}></Route>
+        <Route element={<MainLayout />}>
+          <Route path="/accounts" element={<Accounts />} />
+        </Route>
 
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
