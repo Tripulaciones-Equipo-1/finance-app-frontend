@@ -28,4 +28,14 @@
     font-size: 18px;
     color: $ternary-text-color;
   }
+
+  &__logo {
+    position: absolute;
+    right: 10px;
+    height: 30px;
+  }
+
+  &__icon {
+    height: 30px;
+  }
 }
