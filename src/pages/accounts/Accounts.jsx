@@ -22,7 +22,7 @@ const Accounts = () => {
 
   return (
     <div>
-      <AccountForm show={show} />
+      <AccountForm show={show} setShow={setShow} />
 
       <Topbar />
 
