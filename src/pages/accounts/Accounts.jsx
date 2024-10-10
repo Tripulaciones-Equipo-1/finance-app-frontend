@@ -1,8 +1,9 @@
 import { useState } from "react";
 import Topbar from "../../components/topbar/Topbar";
+import AccountForm from "../../components/account-form/AccountForm";
+import CreateBtn from "../../components/create-btn/CreateBtn";
 
 import "./Accounts.scss";
-import AccountForm from "../../components/account-form/AccountForm";
 
 const Accounts = () => {
   const accounts = [
@@ -18,10 +19,10 @@ const Accounts = () => {
     },
   ];
 
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
 
   return (
-    <div>
+    <>
       <AccountForm show={show} setShow={setShow} />
 
       <Topbar />
@@ -44,7 +45,9 @@ const Accounts = () => {
           </div>
         </div>
       </section>
-    </div>
+
+      <CreateBtn setShow={setShow} />
+    </>
   );
 };
 
