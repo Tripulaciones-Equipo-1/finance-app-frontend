@@ -1,4 +1,30 @@
 .navbar {
+  display: flex;
+  gap: 8px;
+
   height: 60px;
   background-color: $background-color-focus;
+
+  &__link {
+    display: flex;
+    gap: 2px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  &__icon {
+    width: 25px;
+  }
+
+  &__text {
+    font-size: 12px;
+    font-weight: bold;
+    color: $gray-dark;
+
+    &--highlight {
+      color: $error-color;
+    }
+  }
 }
