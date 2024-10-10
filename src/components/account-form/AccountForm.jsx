@@ -2,7 +2,11 @@ import React from "react";
 
 import "./AccountForm.scss";
 
-const AccountForm = ({ show }) => {
+const AccountForm = ({ show, setShow }) => {
+  const handleCancel = () => {
+    setShow(false);
+  };
+
   return (
     <>
       {show && (
@@ -15,7 +19,7 @@ const AccountForm = ({ show }) => {
 
             <div className="account-form__buttons">
               <button>Aceptar</button>
-              <button>Cancelar</button>
+              <button onClick={handleCancel}>Cancelar</button>
             </div>
           </div>
         </div>
