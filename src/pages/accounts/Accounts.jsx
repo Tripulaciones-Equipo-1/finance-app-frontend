@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Topbar from "../../components/topbar/Topbar";
 import AccountForm from "../../components/account-form/AccountForm";
 import CreateBtn from "../../components/create-btn/CreateBtn";
@@ -19,6 +20,8 @@ const Accounts = () => {
     },
   ];
 
+  const navigate = useNavigate();
+
   const [show, setShow] = useState(false);
 
   return (
@@ -34,7 +37,11 @@ const Accounts = () => {
           <p className="accounts__section">Cuentas</p>
           <div>
             {accounts.map((acc) => (
-              <div key={acc._id} className="accounts__data">
+              <div
+                onClick={() => navigate(`/accounts/${acc._id}`)}
+                key={acc._id}
+                className="accounts__data"
+              >
                 <div>
                   <p>{acc.alias}</p>
                   <p className="accounts__id">{acc._id}</p>
