@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import AuthZone from "../../guards/AuthZone";
 import Topbar from "../../components/topbar/Topbar";
 import AccountForm from "../../components/account-form/AccountForm";
 import CreateBtn from "../../components/create-btn/CreateBtn";
@@ -25,7 +26,7 @@ const Accounts = () => {
   const [show, setShow] = useState(false);
 
   return (
-    <>
+    <AuthZone>
       <AccountForm show={show} setShow={setShow} />
 
       <Topbar />
@@ -54,7 +55,7 @@ const Accounts = () => {
       </section>
 
       <CreateBtn setShow={setShow} />
-    </>
+    </AuthZone>
   );
 };
 
