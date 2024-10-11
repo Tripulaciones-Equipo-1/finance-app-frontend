@@ -1,7 +1,8 @@
 import React from "react";
-import Topbar from "../../components/topbar/Topbar";
+import Topbar from "../../components/topbar/Topbar"
+import Bottombar from "../../components/bottombar/bottombar";
 import "./Home.scss"
-import telIcono from "../../assets/images/tel-icono.png";
+import telIcono from "../../assets/icons/tel-icono.svg";
 import regis from "../../assets/images/agregar.png"
 
 
@@ -26,6 +27,7 @@ const Home = () => {
           </a>
         </div>
       </section>
+      <Bottombar/>
     </div>
   );
 };

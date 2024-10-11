@@ -1,52 +1,51 @@
 .home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+
+  &__container {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  &__login {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 50px;
+    justify-content: space-around;
+    align-items: start;
+    background-color: white;
+    margin: 20px;
+  }
 
-    &__container {
-        width: 100%;
-        max-width: 500px;
-    }
+  &__iconTel {
+    width: 24%;
+    color: red($color: #ff2727);
+  }
 
-    &__login {
-        display: flex;
-        justify-content:space-around;
-        align-items: start;
-        background-color: white;
-        margin: 20px;
-    }
+  &__titleLog {
+    padding-top: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
 
-    &__iconTel{
-        width: 24%;
-    }
+  &__register {
+    margin: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    padding-left: 20px;
+    background-color: white;
+  }
 
-    &__titleLog {
-        padding-top: 30px;
-        font-size: 15px;
-        font-weight: bold;
-        text-transform: uppercase;
-    }
+  &__iconRegis {
+    width: 23%;
+  }
 
-
-    &__register {
-        margin:20px;
-        display: flex;
-        justify-content: space-around;
-        align-items: start;
-        padding-left: 20px;
-        background-color: white;
-    }
-
-    &__iconRegis {
-        width: 23%;
-    }
-
-    &__titleRegis{
-        padding-top: 35px;
-        font-size: 15px;
-        font-weight: bold;
-        text-transform: uppercase;
-    }
-
+  &__titleRegis {
+    padding-top: 35px;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
 }
