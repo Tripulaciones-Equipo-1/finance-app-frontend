@@ -5,7 +5,7 @@ import { login, reset } from "../../redux/auth/authSlice";
 import { useNavigate } from "react-router-dom";
 import Topbar from "../../components/topbar/Topbar";
 import Loader from "../../components/loader/Loader";
-import "./Login.scss"
+import "./Login.scss";
 
 const Login = () => {
   const initialState = {
@@ -41,13 +41,12 @@ const Login = () => {
     dispatch(login(formData));
   };
 
-
   return (
     <>
       <Loader loading={isLoading} />
 
       <div className="page">
-        <Topbar path={"/login"} />
+        <Topbar path={"/"} />
 
         <section className="login">
           <div className="login__container">
@@ -63,7 +62,7 @@ const Login = () => {
                   placeholder="DNI"
                   value={formData.dni}
                   onChange={handleChange}
-                  className= 'login__input'
+                  className="login__input"
                 />
               </div>
 
@@ -74,7 +73,7 @@ const Login = () => {
                   placeholder="Clave"
                   value={formData.password}
                   onChange={handleChange}
-                  className= 'login__input'
+                  className="login__input"
                 />
               </div>
               <button type="submit" className="login__submit">
