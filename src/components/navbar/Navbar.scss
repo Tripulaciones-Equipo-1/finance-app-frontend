@@ -5,6 +5,8 @@
   height: 60px;
   background-color: $background-color-focus;
 
+  box-shadow: 0 -2px 2px 0 $gray-light;
+
   &__link {
     display: flex;
     gap: 2px;

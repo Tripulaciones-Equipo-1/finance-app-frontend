@@ -69,7 +69,7 @@ const Accounts = () => {
                 className="accounts__data"
               >
                 <div>
-                  <p>{acc.alias}</p>
+                  <p className="accounts__alias">{acc.alias}</p>
                   <p className="accounts__id">{acc._id}</p>
                 </div>
                 <p className="accounts__balance">
