@@ -5,10 +5,7 @@ import "./Transaction.scss";
 
 const Transaction = ({ _id, from, to, value, category }) => {
   return (
-    <div
-      className="transaction"
-      style={{ "border-color": categories[category] }}
-    >
+    <div className="transaction" style={{ borderColor: categories[category] }}>
       <div>
         <p className="transaction__origin">{value < 0 ? to : from}</p>
         <p
