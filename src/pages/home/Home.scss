@@ -1,12 +1,13 @@
-*{
-    background-color: FAFAFA;
-}
-
 .home {
-    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-top: 50px;
-    margin: 100px;
-   
+
+    &__container {
+        width: 100%;
+        max-width: 500px;
+    }
 
     &__login {
         display: flex;
@@ -17,12 +18,12 @@
     }
 
     &__iconTel{
-        width: 45%;
+        width: 24%;
     }
 
     &__titleLog {
         padding-top: 30px;
-        font-size: 20px;
+        font-size: 15px;
         font-weight: bold;
         text-transform: uppercase;
     }
@@ -38,12 +39,12 @@
     }
 
     &__iconRegis {
-        width: 40%;
+        width: 23%;
     }
 
     &__titleRegis{
         padding-top: 35px;
-        font-size: 20px;
+        font-size: 15px;
         font-weight: bold;
         text-transform: uppercase;
     }
