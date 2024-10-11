@@ -47,7 +47,9 @@ const Accounts = () => {
                   <p>{acc.alias}</p>
                   <p className="accounts__id">{acc._id}</p>
                 </div>
-                <p className="accounts__balance">{acc.balance}€</p>
+                <p className="accounts__balance">
+                  {acc.balance.toLocaleString("en", { useGrouping: true })}€
+                </p>
               </div>
             ))}
           </div>
