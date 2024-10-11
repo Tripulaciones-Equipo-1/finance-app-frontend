@@ -1,66 +1,64 @@
 .login {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-  
-    &__container {
-      width: 100%;
-      max-width: 500px;
-      transform: translate(0, -15%);
-    }
-  
-    &__title {
-      margin-bottom: 5px;
-      text-align: center;
-      font-size: 18px;
-      font-weight: bold;
-  
-      text-transform: uppercase;
-    }
-  
-    &__form {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      padding: 0 10px;
-      margin-top: 10px;
-    }
-  
-    &__input {
-      width: 100%;
-      padding: 10px 3px;
-      font-size: 14px;
-      outline: none;
-      border-radius: 5px;
-      border: 2px solid $secondary-text-color;
-      background-color: $background-color-focus;
-  
-      &::placeholder {
-        font-size: 14px;
-      }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 
-    }
-  
-    &__error {
-      padding-top: 2px;
-      text-align: center;
+  &__container {
+    width: 100%;
+    max-width: 500px;
+    transform: translate(0, -15%);
+  }
+
+  &__title {
+    margin-bottom: 5px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+
+    text-transform: uppercase;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0 10px;
+    margin-top: 10px;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid $gray-light;
+    background-color: $background-color-focus;
+
+    &::placeholder {
       font-size: 14px;
-      font-weight: bold;
-      color: $error-color;
-    }
-  
-    &__submit {
-      margin-top: 20px;
-      padding: 15px;
-  
-      font-size: 16px;
-      font-weight: bold;
-    }
-  
-    &__link {
-      margin-top: 20px;
-      text-align: center;
     }
   }
-  
+
+  &__error {
+    padding-top: 2px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: $error-color;
+  }
+
+  &__submit {
+    margin-top: 20px;
+    padding: 15px;
+
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  &__link {
+    margin-top: 20px;
+    text-align: center;
+  }
+}
