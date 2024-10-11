@@ -1,0 +1,36 @@
+.transaction {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 10px;
+  padding: 5px 10px;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  border-radius: 5px;
+  background-color: $background-color-focus;
+
+  box-shadow: 0 4px 2px -2px $secondary-text-color;
+
+  &__origin {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  &__category {
+    font-weight: bold;
+  }
+
+  &__value {
+    font-size: 18px;
+    font-weight: bold;
+
+    &--positive {
+      color: $secondary-color;
+    }
+
+    &--negative {
+      color: $error-color;
+    }
+  }
+}

@@ -6,6 +6,7 @@ import AccountForm from "../../components/account-form/AccountForm";
 import CreateBtn from "../../components/create-btn/CreateBtn";
 
 import "./Accounts.scss";
+import Transaction from "../../components/transaction/Transaction";
 
 const Accounts = () => {
   const accounts = [
@@ -18,6 +19,30 @@ const Accounts = () => {
       _id: "222222222222",
       alias: "cuenta",
       balance: 10000000,
+    },
+  ];
+
+  const transactions = [
+    {
+      _id: "11111111",
+      from: "me",
+      to: "Bar Pepe",
+      value: -300,
+      category: "Ocio",
+    },
+    {
+      _id: "22222222",
+      from: "me",
+      to: "Taller Pepe",
+      value: -300,
+      category: "Coche",
+    },
+    {
+      _id: "3333333",
+      from: "Empresa Pepe",
+      to: "me",
+      value: 1300,
+      category: "Ingreso",
     },
   ];
 
@@ -55,6 +80,10 @@ const Accounts = () => {
           </div>
         </div>
       </section>
+
+      {transactions.map((trans) => (
+        <Transaction key={trans._id} {...trans} />
+      ))}
 
       <CreateBtn setShow={setShow} />
     </AuthZone>

@@ -19,7 +19,8 @@
     align-items: center;
     padding: 5px 10px;
 
-    border-bottom: 1px solid $secondary-text-color;
+    border-bottom: 2px solid $secondary-text-color;
+    background-color: $background-color-focus;
   }
 
   &__id {
