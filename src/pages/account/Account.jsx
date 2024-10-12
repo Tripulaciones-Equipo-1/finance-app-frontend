@@ -54,7 +54,7 @@ const Account = () => {
     <AuthZone>
       <Loader loading={isLoading} />
 
-      <Topbar />
+      <Topbar path={"/accounts"} />
 
       <section>
         {Object.keys(orderedTransactions).map((year) => {
