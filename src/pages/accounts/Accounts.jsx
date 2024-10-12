@@ -46,6 +46,11 @@ const Accounts = () => {
     },
   ];
 
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+  }, []);
+
   const navigate = useNavigate();
 
   const [show, setShow] = useState(false);
