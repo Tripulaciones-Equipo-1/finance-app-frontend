@@ -3,6 +3,7 @@ import accountsService from "./accountsService";
 
 const initialState = {
   account: {},
+  transactions: [],
   isLoading: false,
   isError: false,
   isSuccess: false,
@@ -16,6 +17,18 @@ export const createAccount = createAsyncThunk(
       return await accountsService.createAccount(accountData);
     } catch (error) {
       console.error("Create account error: ", error);
+      return rejectWithValue(error.response.data);
+    }
+  },
+);
+
+export const getTransactions = createAsyncThunk(
+  "accounts/getTransactions",
+  async (accountId, { rejectWithValue }) => {
+    try {
+      return await accountsService.getTransactions(accountId);
+    } catch (error) {
+      console.error("Get account transactions error: ", error);
       return rejectWithValue(error.response.data);
     }
   },
@@ -47,6 +60,14 @@ export const accountsSlice = createSlice({
         state.isError = true;
         state.isLoading = false;
         state.message = "El correo o DNI ya ha sido utilizado.";
+      })
+      .addCase(getTransactions.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(getTransactions.fulfilled, (state, action) => {
+        state.transactions = action.payload.transactions;
+        state.isLoading = false;
+        state.isSuccess = true;
       });
   },
 });

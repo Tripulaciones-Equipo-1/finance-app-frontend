@@ -1,0 +1,15 @@
+.account {
+  &__year {
+    padding: 5px 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: $ternary-text-color;
+    background-color: $secondary-color;
+  }
+
+  &__months {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+}

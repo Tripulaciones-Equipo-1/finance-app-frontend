@@ -1,0 +1,47 @@
+.month-card {
+  width: 100%;
+
+  background-color: $background-color-focus;
+  border-top: 2px solid $secondary-color;
+  border-bottom: 2px solid $secondary-color;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 15px;
+
+    border-bottom: 2px solid $gray-light;
+
+    p {
+      font-size: 16px;
+    }
+  }
+
+  &__data {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8px 10px;
+
+    color: $secondary-text-color;
+
+    p {
+      font-size: 18px;
+      font-weight: bold;
+    }
+  }
+
+  &__income,
+  &__costs {
+    font-weight: bold;
+  }
+
+  &__income {
+    color: $secondary-color;
+  }
+
+  &__costs {
+    color: $primary-color;
+  }
+}

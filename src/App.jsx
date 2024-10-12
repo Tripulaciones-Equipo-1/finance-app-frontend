@@ -6,6 +6,7 @@ import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 import Accounts from "./pages/accounts/Accounts";
+import Account from "./pages/account/Account";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route element={<MainLayout />}>
           <Route path="/accounts" element={<Accounts />} />
+          <Route path="/account/:id" element={<Account />} />
         </Route>
 
         <Route path="/" element={<Home />} />

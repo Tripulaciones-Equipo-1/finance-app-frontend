@@ -45,7 +45,7 @@ const Accounts = () => {
           <div>
             {accounts.map((acc) => (
               <div
-                onClick={() => navigate(`/accounts/${acc._id}`)}
+                onClick={() => navigate(`/account/${acc._id}`)}
                 key={acc._id}
                 className="accounts__data"
               >
