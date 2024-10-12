@@ -15,8 +15,8 @@ const getAccounts = async () => {
   return res.data;
 };
 
-const accountsService = {
-  createAccount,
+const usersService = {
+  getAccounts,
 };
 
-export default accountsService;
+export default usersService;

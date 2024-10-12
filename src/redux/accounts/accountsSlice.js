@@ -15,7 +15,7 @@ export const createAccount = createAsyncThunk(
     try {
       return await accountsService.createAccount(accountData);
     } catch (error) {
-      console.error("Register error: ", error);
+      console.error("Create account error: ", error);
       return rejectWithValue(error.response.data);
     }
   },

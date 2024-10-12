@@ -1,62 +1,39 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getAccounts, reset } from "../../redux/users/usersSlice";
+
 import AuthZone from "../../guards/AuthZone";
 import Topbar from "../../components/topbar/Topbar";
 import AccountForm from "../../components/account-form/AccountForm";
 import CreateBtn from "../../components/create-btn/CreateBtn";
+import Loader from "../../components/loader/Loader";
 
 import "./Accounts.scss";
 import Transaction from "../../components/transaction/Transaction";
 
 const Accounts = () => {
-  const accounts = [
-    {
-      _id: "1111111111111",
-      alias: "tarjeta",
-      balance: 50000,
-    },
-    {
-      _id: "222222222222",
-      alias: "cuenta",
-      balance: 10000000,
-    },
-  ];
+  const [show, setShow] = useState(false);
 
-  const transactions = [
-    {
-      _id: "11111111",
-      from: "me",
-      to: "Bar Pepe",
-      value: -300,
-      category: "Ocio",
-    },
-    {
-      _id: "22222222",
-      from: "me",
-      to: "Taller Pepe",
-      value: -300,
-      category: "Coche",
-    },
-    {
-      _id: "3333333",
-      from: "Empresa Pepe",
-      to: "me",
-      value: 1300,
-      category: "Ingreso",
-    },
-  ];
-
-  const dispatch = useDispatch()
-
-  useEffect(() => {
-  }, []);
-
+  const { accounts, isSuccess, isLoading } = useSelector(
+    (state) => state.users,
+  );
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const [show, setShow] = useState(false);
+  useEffect(() => {
+    dispatch(getAccounts());
+  }, []);
+
+  useEffect(() => {
+    if (!isSuccess) return;
+    dispatch(reset());
+  }, [isSuccess]);
 
   return (
     <AuthZone>
+      <Loader loading={isLoading} />
+
       <AccountForm show={show} setShow={setShow} />
 
       <Topbar />
@@ -85,10 +62,6 @@ const Accounts = () => {
           </div>
         </div>
       </section>
-
-      {transactions.map((trans) => (
-        <Transaction key={trans._id} {...trans} />
-      ))}
 
       <CreateBtn setShow={setShow} />
     </AuthZone>

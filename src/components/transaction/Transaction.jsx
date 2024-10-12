@@ -23,7 +23,7 @@ const Transaction = ({ _id, from, to, value, category }) => {
             : "transaction__value--negative"
         }`}
       >
-        {value}€
+        {value.toLocaleString("en", { useGrouping: true })}€
       </p>
     </div>
   );
