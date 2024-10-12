@@ -9,6 +9,7 @@ import Loader from "../../components/loader/Loader";
 import MonthCard from "../../components/month-card/MonthCard";
 
 import "./Account.scss";
+import Transaction from "../../components/transaction/Transaction";
 
 const Account = () => {
   const params = useParams();
@@ -74,6 +75,10 @@ const Account = () => {
             </div>
           );
         })}
+
+        {transactions.map((trans) => (
+          <Transaction key={trans._id} {...trans} />
+        ))}
       </section>
     </AuthZone>
   );

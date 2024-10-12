@@ -4,13 +4,32 @@
   align-items: center;
 
   margin: 10px;
-  padding: 5px 10px;
   border-top: 2px solid;
   border-bottom: 2px solid;
   border-radius: 5px;
+  overflow: hidden;
   background-color: $background-color-focus;
 
   box-shadow: 0 4px 2px -2px $gray-light;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 100%;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 50px;
+
+    img {
+      width: 50%;
+    }
+  }
 
   &__origin {
     font-size: 18px;
@@ -24,6 +43,8 @@
   &__value {
     font-size: 18px;
     font-weight: bold;
+
+    padding-right: 15px;
 
     &--positive {
       color: $secondary-color;
