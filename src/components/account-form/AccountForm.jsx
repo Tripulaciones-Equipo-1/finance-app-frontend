@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createAccount, reset } from "../../redux/accounts/accountsSlice";
+import { getAccounts } from "../../redux/users/usersSlice";
 
 import Loader from "../loader/Loader";
 
@@ -21,6 +22,7 @@ const AccountForm = ({ show, setShow }) => {
   useEffect(() => {
     if (!isSuccess) return;
     dispatch(reset());
+    dispatch(getAccounts());
     setShow(false);
   }, [isSuccess]);
 

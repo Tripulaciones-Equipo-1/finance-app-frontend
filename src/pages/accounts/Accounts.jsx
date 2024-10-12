@@ -10,7 +10,6 @@ import CreateBtn from "../../components/create-btn/CreateBtn";
 import Loader from "../../components/loader/Loader";
 
 import "./Accounts.scss";
-import Transaction from "../../components/transaction/Transaction";
 
 const Accounts = () => {
   const [show, setShow] = useState(false);
