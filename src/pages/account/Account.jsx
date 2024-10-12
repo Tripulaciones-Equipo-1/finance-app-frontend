@@ -48,7 +48,6 @@ const Account = () => {
     if (!isSuccess) return;
     dispatch(reset());
     setOrderedTransactions(valuesMonth());
-    console.log(transactions);
   }, [isSuccess]);
 
   return (
@@ -75,10 +74,6 @@ const Account = () => {
             </div>
           );
         })}
-
-        {/* {transactions.map((trans) => (
-          <Transaction key={trans._id} {...trans} />
-        ))} */}
       </section>
     </AuthZone>
   );
