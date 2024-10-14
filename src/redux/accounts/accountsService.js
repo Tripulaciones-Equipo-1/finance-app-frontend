@@ -15,8 +15,21 @@ const createAccount = async (accountData) => {
   return res.data;
 };
 
+const getTransactions = async (accountId) => {
+  const token = JSON.parse(localStorage.getItem("token"));
+
+  const res = await axios.get(`${API_URL}/account/transactions/${accountId}`, {
+    headers: {
+      authorization: token,
+    },
+  });
+
+  return res.data;
+};
+
 const accountsService = {
   createAccount,
+  getTransactions,
 };
 
 export default accountsService;
