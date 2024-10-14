@@ -3,7 +3,7 @@ import Topbar from "../../components/topbar/Topbar"
 import Bottombar from "../../components/bottombar/bottombar";
 import "./Home.scss"
 import telIcono from "../../assets/icons/tel-icono.svg";
-import regis from "../../assets/images/agregar.png"
+import regis from "../../assets/icons/user-icon.svg"
 
 
 const Home = () => {
