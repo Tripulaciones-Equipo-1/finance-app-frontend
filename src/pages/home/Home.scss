@@ -1,0 +1,52 @@
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+
+  &__container {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  &__login {
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    background-color: white;
+    margin: 20px;
+  }
+
+  &__iconTel {
+    width: 24%;
+    color:#ff2727;
+  }
+
+  &__titleLog {
+    padding-top: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  &__register {
+    margin: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    padding-left: 10px;
+    background-color: white;
+  }
+
+  &__iconRegis {
+    width: 23%;
+  }
+
+  &__titleRegis {
+    padding-top: 13px;
+    padding-left: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
