@@ -1,6 +1,6 @@
 import React from "react";
 import Topbar from "../../components/topbar/Topbar"
-import Bottombar from "../../components/bottombar/bottombar";
+import Bottomvar from "../../components/bottomvar/Bottomvar";
 import "./Home.scss"
 import telIcono from "../../assets/icons/tel-icono.svg";
 import regis from "../../assets/icons/user-icon.svg"
@@ -27,7 +27,7 @@ const Home = () => {
           </a>
         </div>
       </section>
-      <Bottombar/>
+      <Bottomvar/>
     </div>
   );
 };

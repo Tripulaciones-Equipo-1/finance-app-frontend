@@ -1,5 +1,5 @@
 import React from "react";
-import "./bottombar.scss";
+import "./bottomvar.scss";
 import face from "../../assets/icons/social/facebook-icon.svg";
 import insta from "../../assets/icons/social/insta-icon.svg";
 import twitter from "../../assets/icons/social/twitter-icon.svg";
