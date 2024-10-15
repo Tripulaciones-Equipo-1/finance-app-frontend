@@ -25,7 +25,7 @@ const Account = () => {
     transactions.forEach((trans) => {
       // createdAt: "2024-10-12T09:58:41.285Z"
       const { value, date } = trans;
-      let [year, month] = date.split(/[-T:.]/);
+      let [year, month] = date.split(/[-T:. ]/);
 
       if (!res[year]) res[year] = {};
       if (!res[year][month]) {

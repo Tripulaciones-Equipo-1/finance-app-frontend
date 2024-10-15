@@ -4,7 +4,9 @@ import carIcon from "../../assets/icons/car.svg";
 
 import "./Transaction.scss";
 
-const Transaction = ({ _id, concept, value, category }) => {
+const Transaction = ({ _id, concept, value, category, date }) => {
+  const [_, month, day] = date.split(/[-T:. ]/);
+
   return (
     <div
       className="transaction"
@@ -18,15 +20,13 @@ const Transaction = ({ _id, concept, value, category }) => {
           <img src={categories[category].icon} alt="transaction icon" />
         </div>
 
-        <div>
-          <p className="transaction__origin">{concept}</p>
-          <p
-            className="transaction__category"
-            style={{ color: categories[category].color }}
-          >
-            {category}
-          </p>
-        </div>
+        <p className="transaction__date">
+          {day}/{month}
+        </p>
+
+        <p className="transaction__concept">
+          {concept} {concept} {concept} {concept} {concept}
+        </p>
       </div>
 
       <p
