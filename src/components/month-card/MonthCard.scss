@@ -14,7 +14,20 @@
     border-bottom: 2px solid $gray-light;
 
     p {
-      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+
+  &__dif {
+    font-size: 18px;
+    font-weight: bold;
+
+    &--income {
+      color: $secondary-color;
+    }
+
+    &--cost {
+      color: $primary-color;
     }
   }
 

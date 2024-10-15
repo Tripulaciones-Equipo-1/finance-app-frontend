@@ -4,22 +4,25 @@ import carIcon from "../../assets/icons/car.svg";
 
 import "./Transaction.scss";
 
-const Transaction = ({ _id, from, to, value, category }) => {
+const Transaction = ({ _id, concept, value, category }) => {
   return (
-    <div className="transaction" style={{ borderColor: categories[category] }}>
+    <div
+      className="transaction"
+      style={{ borderColor: categories[category].color }}
+    >
       <div className="transaction__container">
         <div
           className="transaction__icon"
-          style={{ backgroundColor: categories[category] }}
+          style={{ backgroundColor: categories[category].color }}
         >
-          <img src={carIcon} alt="transaction icon" />
+          <img src={categories[category].icon} alt="transaction icon" />
         </div>
 
         <div>
-          <p className="transaction__origin">{value < 0 ? to : from}</p>
+          <p className="transaction__origin">{concept}</p>
           <p
             className="transaction__category"
-            style={{ color: categories[category] }}
+            style={{ color: categories[category].color }}
           >
             {category}
           </p>
