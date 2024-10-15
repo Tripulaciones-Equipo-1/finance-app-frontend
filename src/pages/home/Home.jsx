@@ -12,17 +12,13 @@ const Home = () => {
 
       <section className="home">
         <div className="home__container">
-          <a href="/login" className="home__login">
-            <div className="home__login">
-              <img src={telIcono} alt="iconTel" className="home__iconTel" />
-              <p className="home__titleLog">acceso a banca móvil</p>
-            </div>
+          <a href="/login" className="home__option">
+            <img src={telIcono} alt="iconTel" className="home__icon" />
+            <p className="home__title">Acceso a banca móvil</p>
           </a>
-          <a href="/register" className="home__register">
-            <div className="home__register">
-              <img src={regis} alt="iconoTel" className="home__iconRegis" />
-              <p className="home__titleRegis">Registrate a banca móvil</p>
-            </div>
+          <a href="/register" className="home__option">
+            <img src={regis} alt="iconoTel" className="home__icon" />
+            <p className="home__title">Regístrate a banca móvil</p>
           </a>
         </div>
       </section>

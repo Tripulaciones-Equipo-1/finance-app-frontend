@@ -8,44 +8,28 @@
     max-width: 500px;
   }
 
-  &__login {
+  &__option {
     display: flex;
-    justify-content: space-around;
-    align-items: start;
-    background-color: white;
+    align-items: center;
+    gap: 10px;
+
     margin: 20px;
+    padding: 20px;
+
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 4px 2px -2px $gray-light;
   }
 
-  &__iconTel {
-    width: 24%;
-    color: #ff2727;
+  &__icon {
+    width: 70px;
   }
 
-  &__titleLog {
-    padding-top: 30px;
+  &__title {
+    width: 100%;
     font-size: 15px;
     font-weight: bold;
-    text-transform: uppercase;
-  }
-
-  &__register {
-    margin: 20px;
-    display: flex;
-    justify-content: space-around;
-    align-items: start;
-    padding-left: 10px;
-    background-color: white;
-  }
-
-  &__iconRegis {
-    width: 23%;
-  }
-
-  &__titleRegis {
-    padding-top: 13px;
-    padding-left: 15px;
-    font-size: 16px;
-    font-weight: bold;
+    text-align: center;
     text-transform: uppercase;
   }
 }
