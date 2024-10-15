@@ -1,8 +1,7 @@
 .home {
   display: flex;
-  align-items: center;
   justify-content: center;
-  margin-top: 50px;
+  height: 100%;
 
   &__container {
     width: 100%;
@@ -19,7 +18,7 @@
 
   &__iconTel {
     width: 24%;
-    color:#ff2727;
+    color: #ff2727;
   }
 
   &__titleLog {

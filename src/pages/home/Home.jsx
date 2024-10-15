@@ -1,14 +1,13 @@
 import React from "react";
 import Topbar from "../../components/topbar/Topbar";
-import GraphicDoughtnut from "../../components/GraphicDoughtnut/GraphicDoughnut";
-import Bottomvar from "../../components/bottomvar/Bottomvar";
+import Bottomvar from "../../components/bottombar/Bottombar";
 import "./Home.scss";
 import telIcono from "../../assets/icons/tel-icono.svg";
 import regis from "../../assets/icons/user-icon.svg";
 
 const Home = () => {
   return (
-    <div>
+    <div className="page">
       <Topbar />
 
       <section className="home">
@@ -27,6 +26,7 @@ const Home = () => {
           </a>
         </div>
       </section>
+
       <Bottomvar />
     </div>
   );
