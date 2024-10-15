@@ -1,6 +1,5 @@
 import React from "react";
 import { categories } from "../../utils/categories";
-import carIcon from "../../assets/icons/car.svg";
 
 import "./Transaction.scss";
 

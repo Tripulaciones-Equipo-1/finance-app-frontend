@@ -7,9 +7,9 @@ import AuthZone from "../../guards/AuthZone";
 import Topbar from "../../components/topbar/Topbar";
 import Loader from "../../components/loader/Loader";
 import MonthCard from "../../components/month-card/MonthCard";
+import TransactionList from "../../components/transaction-list/TransactionList";
 
 import "./Account.scss";
-import Transaction from "../../components/transaction/Transaction";
 
 const Account = () => {
   const params = useParams();
@@ -18,7 +18,12 @@ const Account = () => {
     (state) => state.accounts,
   );
 
+  const [showData, setShowData] = useState(false);
   const [orderedTransactions, setOrderedTransactions] = useState({});
+  const [currentTransactions, setCurrentTransactions] = useState({
+    income: [],
+    costs: [],
+  });
 
   const valuesMonth = () => {
     let res = {};
@@ -41,6 +46,11 @@ const Account = () => {
     return res;
   };
 
+  const handleClick = (data) => {
+    setCurrentTransactions(data);
+    setShowData(true);
+  };
+
   useEffect(() => {
     dispatch(getTransactions(params.id));
   }, []);
@@ -54,6 +64,12 @@ const Account = () => {
   return (
     <AuthZone>
       <Loader loading={isLoading} />
+
+      <TransactionList
+        show={showData}
+        setShow={setShowData}
+        transactions={currentTransactions}
+      />
 
       <Topbar path={"/accounts"} />
 
@@ -69,16 +85,13 @@ const Account = () => {
                     year={year}
                     month={month}
                     data={orderedTransactions[year][month]}
+                    handleClick={handleClick}
                   />
                 ))}
               </div>
             </div>
           );
         })}
-
-        {transactions.map((trans) => (
-          <Transaction key={trans._id} {...trans} />
-        ))}
       </section>
     </AuthZone>
   );
