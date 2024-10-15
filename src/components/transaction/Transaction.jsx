@@ -24,9 +24,7 @@ const Transaction = ({ _id, concept, value, category, date }) => {
           {day}/{month}
         </p>
 
-        <p className="transaction__concept">
-          {concept} {concept} {concept} {concept} {concept}
-        </p>
+        <p className="transaction__concept">{concept}</p>
       </div>
 
       <p
