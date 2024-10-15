@@ -4,7 +4,7 @@ import { months } from "../../utils/months";
 import "./MonthCard.scss";
 
 const MonthCard = ({ year, month, data }) => {
-  const income = data.positive.reduce((acc, trans) => acc + trans.value, 0);
+  const income = data.income.reduce((acc, trans) => acc + trans.value, 0);
   const costs = data.costs.reduce((acc, trans) => acc + trans.value, 0);
   const dif = income + costs;
 
@@ -15,7 +15,13 @@ const MonthCard = ({ year, month, data }) => {
           {months[month - 1]} {year}
         </p>
 
-        <p className="">{dif}€</p>
+        <p
+          className={`month-card__dif month-card__dif${
+            dif > 0 ? "--income" : "--cost"
+          }`}
+        >
+          {dif}€
+        </p>
       </div>
 
       <div className="month-card__data">

@@ -24,17 +24,17 @@ const Account = () => {
     let res = {};
     transactions.forEach((trans) => {
       // createdAt: "2024-10-12T09:58:41.285Z"
-      const { value, createdAt } = trans;
-      let [year, month] = createdAt.split(/[-T:.]/);
+      const { value, date } = trans;
+      let [year, month] = date.split(/[-T:.]/);
 
       if (!res[year]) res[year] = {};
       if (!res[year][month]) {
         res[year][month] = {};
-        res[year][month].positive = [];
+        res[year][month].income = [];
         res[year][month].costs = [];
       }
 
-      if (value > 0) res[year][month].positive.push(trans);
+      if (value > 0) res[year][month].income.push(trans);
       else res[year][month].costs.push(trans);
     });
 
