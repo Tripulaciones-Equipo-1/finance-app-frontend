@@ -1,5 +1,5 @@
-import React from "react";
-import { useLocation } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import houseIcon from "../../assets/icons/house-chimney.svg";
 import houseFillIcon from "../../assets/icons/house-chimney-fill.svg";
@@ -11,11 +11,25 @@ import interrogationIcon from "../../assets/icons/interrogation.svg";
 import interrogationFillIcon from "../../assets/icons/interrogation-fill.svg";
 import menuIcon from "../../assets/icons/menu.svg";
 import menuFillIcon from "../../assets/icons/menu-fill.svg";
-
+import { useDispatch, useSelector } from "react-redux";
+import { logout, reset } from "../../redux/auth/authSlice";
 import "./Navbar.scss";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const location = useLocation();
+  const dispatch = useDispatch();
+  const { isSuccess } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    if (!isSuccess) return;
+    dispatch(reset());
+    navigate("/");
+  }, [isSuccess]);
+
+  const clickLogout = () => {
+    dispatch(logout());
+  };
 
   return (
     <nav className="navbar">
@@ -83,7 +97,7 @@ const Navbar = () => {
         </p>
       </a>
 
-      <a href="#" className="navbar__link">
+      <a href="#" onClick={clickLogout} className="navbar__link">
         <img
           src={location.pathname === "/" ? menuFillIcon : menuIcon}
           alt="house icon"

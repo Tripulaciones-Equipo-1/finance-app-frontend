@@ -37,6 +37,18 @@ export const login = createAsyncThunk(
   },
 );
 
+export const logout = createAsyncThunk(
+  "auth/logout",
+  async (userData, { rejectWithValue }) => {
+    try {
+      return await authService.logout(userData);
+    } catch (error) {
+      console.error("Logout error: ", error);
+      return rejectWithValue(error.response.data);
+    }
+  },
+);
+
 export const authSlice = createSlice({
   name: "auth",
   initialState,
@@ -68,7 +80,6 @@ export const authSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(login.fulfilled, (state, action) => {
-        console.log(action.payload);
         state.isSuccess = true;
       })
       .addCase(login.rejected, (state, action) => {
@@ -76,6 +87,15 @@ export const authSlice = createSlice({
         state.isError = true;
         state.isLoading = false;
         state.message = "El DNI o contraseña son incorrectos.";
+      })
+      .addCase(logout.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(logout.fulfilled, (state, action) => {
+        console.log(action.payload);
+        state.isSuccess = true;
+        state.isLoading = false;
+        localStorage.clear();
       });
   },
 });
