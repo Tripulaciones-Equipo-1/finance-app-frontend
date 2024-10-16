@@ -57,6 +57,7 @@ const Account = () => {
 
   useEffect(() => {
     if (!isSuccess) return;
+
     dispatch(reset());
     setOrderedTransactions(valuesMonth());
   }, [isSuccess]);
@@ -74,24 +75,26 @@ const Account = () => {
       <Topbar path={"/accounts"} />
 
       <section>
-        {Object.keys(orderedTransactions).map((year) => {
-          return (
-            <div key={year}>
-              <p className="account__year">{year}</p>
-              <div className="account__months">
-                {Object.keys(orderedTransactions[year]).map((month) => (
-                  <MonthCard
-                    key={`${month}-${year}`}
-                    year={year}
-                    month={month}
-                    data={orderedTransactions[year][month]}
-                    handleClick={handleClick}
-                  />
-                ))}
+        {Object.keys(orderedTransactions)
+          .reverse()
+          .map((year) => {
+            return (
+              <div key={year}>
+                <p className="account__year">{year}</p>
+                <div className="account__months">
+                  {Object.keys(orderedTransactions[year]).map((month) => (
+                    <MonthCard
+                      key={`${month}-${year}`}
+                      year={year}
+                      month={month}
+                      data={orderedTransactions[year][month]}
+                      handleClick={handleClick}
+                    />
+                  ))}
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
       </section>
     </AuthZone>
   );
