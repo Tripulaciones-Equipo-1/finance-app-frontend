@@ -79,7 +79,7 @@ const Account = () => {
           .reverse()
           .map((year) => {
             return (
-              <div key={year}>
+              <div key={year} className="account__block">
                 <p className="account__year">{year}</p>
                 <div className="account__months">
                   {Object.keys(orderedTransactions[year]).map((month) => (

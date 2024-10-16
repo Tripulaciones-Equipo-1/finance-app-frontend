@@ -1,4 +1,10 @@
 .account {
+  &__block {
+    padding-bottom: 5px;
+
+    border-bottom: 3px solid $gray-light;
+  }
+
   &__year {
     padding: 5px 10px;
     font-size: 18px;
