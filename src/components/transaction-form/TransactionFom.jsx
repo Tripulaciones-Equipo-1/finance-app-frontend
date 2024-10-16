@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { createTransactions, reset } from "../../redux/accounts/accountsSlice";
+import {
+  createTransactions,
+  getTransactions,
+  reset,
+} from "../../redux/accounts/accountsSlice";
+import { useParams } from "react-router-dom";
 
 import Loader from "../loader/Loader";
 
@@ -15,6 +20,7 @@ const TransactionFom = ({ show, setShow }) => {
 
   const [formData, setFormData] = useState(initialState);
 
+  const params = useParams();
   const dispatch = useDispatch();
   const { isSuccess, isLoading, message } = useSelector(
     (state) => state.accounts,
@@ -23,7 +29,7 @@ const TransactionFom = ({ show, setShow }) => {
   useEffect(() => {
     if (!isSuccess) return;
     dispatch(reset());
-    dispatch(createTransactions());
+    // dispatch(getTransactions(params.id));
     setShow(false);
   }, [isSuccess]);
 
@@ -79,7 +85,7 @@ const TransactionFom = ({ show, setShow }) => {
                     value={formData.value}
                     onChange={handleChange}
                   />
-                   </div>
+                </div>
                 {/* </div>
                 <div className="transaction-form__input">
                   <label htmlFor="category">Categoria:</label>
