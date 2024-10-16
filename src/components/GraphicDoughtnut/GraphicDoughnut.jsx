@@ -39,9 +39,12 @@ const GraphicDoughnut = ({ transactionsList }) => {
       },
     ],
   };
+  Chart.defaults.color = "#19171c";
+  Chart.defaults.plugins.legend.position = "bottom";
+  Chart.defaults.font.size = 18;
 
   return (
-    <div className="anual-donut">
+    <div className="graphic">
       <Pie data={data} />
     </div>
   );
