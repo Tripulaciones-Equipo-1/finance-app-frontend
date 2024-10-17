@@ -15,8 +15,21 @@ const getLatest = async () => {
   return res.data;
 };
 
+const getById = async (transactionId) => {
+  const token = JSON.parse(localStorage.getItem("token"));
+
+  const res = await axios.get(`${API_URL}/transaction/trans/${transactionId}`, {
+    headers: {
+      authorization: token,
+    },
+  });
+
+  return res.data;
+};
+
 const transactionsService = {
   getLatest,
+  getById,
 };
 
 export default transactionsService;

@@ -3,6 +3,7 @@ import transactionsService from "./transactionsService";
 
 const initialState = {
   latest: [],
+  transaction: {},
   isLoading: false,
   isError: false,
   isSuccess: false,
@@ -14,6 +15,18 @@ export const getLatest = createAsyncThunk(
   async (thunkAPI) => {
     try {
       return await transactionsService.getLatest();
+    } catch (error) {
+      console.error("Get latest transactions error: ", error);
+      return thunkAPI.rejectWithValue(error.response.data);
+    }
+  },
+);
+
+export const getById = createAsyncThunk(
+  "transactions/getById",
+  async (transactionId, thunkAPI) => {
+    try {
+      return await transactionsService.getById(transactionId);
     } catch (error) {
       console.error("Get latest transactions error: ", error);
       return thunkAPI.rejectWithValue(error.response.data);
@@ -39,6 +52,14 @@ export const transactionsSlice = createSlice({
       })
       .addCase(getLatest.fulfilled, (state, action) => {
         state.latest = action.payload;
+        state.isLoading = false;
+        state.isSuccess = true;
+      })
+      .addCase(getById.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(getById.fulfilled, (state, action) => {
+        state.data = action.payload;
         state.isLoading = false;
         state.isSuccess = true;
       });

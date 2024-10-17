@@ -7,6 +7,7 @@ import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 import Accounts from "./pages/accounts/Accounts";
 import Account from "./pages/account/Account";
+import TransactionDetails from "./pages/transaction-details/TransactionDetails";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route element={<MainLayout />}>
           <Route path="/accounts" element={<Accounts />} />
           <Route path="/account/:id" element={<Account />} />
+          <Route path="/transaction/:id" element={<TransactionDetails />} />
         </Route>
 
         <Route path="/" element={<Home />} />

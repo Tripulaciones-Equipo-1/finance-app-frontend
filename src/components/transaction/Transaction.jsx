@@ -7,7 +7,8 @@ const Transaction = ({ _id, concept, value, category, date }) => {
   const [_, month, day] = date.split(/[-T:. ]/);
 
   return (
-    <div
+    <a
+      href={`/transaction/${_id}`}
       className="transaction"
       style={{ borderColor: categories[category].color }}
     >
@@ -35,7 +36,7 @@ const Transaction = ({ _id, concept, value, category, date }) => {
       >
         {value.toLocaleString("en", { useGrouping: true })}€
       </p>
-    </div>
+    </a>
   );
 };
 
