@@ -14,7 +14,7 @@ import "./Account.scss";
 const Account = () => {
   const params = useParams();
   const dispatch = useDispatch();
-  const { transactions, isSuccess, isLoading } = useSelector(
+  const { data, transactions, isSuccess, isLoading } = useSelector(
     (state) => state.accounts,
   );
 
@@ -75,6 +75,26 @@ const Account = () => {
       <Topbar path={"/accounts"} />
 
       <section>
+        <div className="account__details">
+          <p className="account__section">Información general</p>
+          <div className="account__data">
+            <p className="account__data-name">Nº cuenta</p>
+            <p>{data._id}</p>
+          </div>
+          <div className="account__data">
+            <p className="account__data-name">Alias</p>
+            <p>{data.alias}</p>
+          </div>
+          <div className="account__data">
+            <p className="account__data-name">Saldo</p>
+            <p>{data.balance}€</p>
+          </div>
+          <div className="account__data">
+            <p className="account__data-name">Titular</p>
+            <p>{data.owner && data.owner.name}</p>
+          </div>
+        </div>
+
         {Object.keys(orderedTransactions)
           .reverse()
           .map((year) => {

@@ -3,6 +3,7 @@ import accountsService from "./accountsService";
 
 const initialState = {
   account: {},
+  data: {},
   transactions: [],
   isLoading: false,
   isError: false,
@@ -65,6 +66,7 @@ export const accountsSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(getTransactions.fulfilled, (state, action) => {
+        state.data = { ...action.payload, transactions: null };
         state.transactions = action.payload.transactions;
         state.isLoading = false;
         state.isSuccess = true;
