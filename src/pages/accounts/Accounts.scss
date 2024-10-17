@@ -39,4 +39,11 @@
   &__balance {
     font-weight: bold;
   }
+
+  &__latest {
+    margin-top: 10px;
+    padding-bottom: 5px;
+
+    border-bottom: 3px solid $gray-light;
+  }
 }
