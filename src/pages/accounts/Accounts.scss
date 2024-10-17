@@ -10,8 +10,10 @@
 
   &__section {
     padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
     color: $ternary-text-color;
-    background-color: $gray-dark;
+    background-color: $secondary-color;
   }
 
   &__data {
