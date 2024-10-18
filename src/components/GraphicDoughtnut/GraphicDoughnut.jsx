@@ -31,7 +31,7 @@ const GraphicDoughnut = ({ transactionsList }) => {
     labels: Object.keys(categoryObject),
     datasets: [
       {
-        label: "",
+        label: "€",
         // Object.values(ct)
         data: Object.values(categoryObject),
         backgroundColor: colors,
@@ -39,6 +39,7 @@ const GraphicDoughnut = ({ transactionsList }) => {
       },
     ],
   };
+
   Chart.defaults.color = "#19171c";
   Chart.defaults.plugins.legend.position = "bottom";
   Chart.defaults.font.size = 18;

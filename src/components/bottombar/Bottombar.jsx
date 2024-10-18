@@ -10,19 +10,39 @@ const Bottombar = () => {
   return (
     <section className="bottombar">
       <div className="bottom__container">
-        <a href="#" className="bottom__logo">
+        <a
+          href="https://www.facebook.com/Kutxabank"
+          target="_blank"
+          className="bottom__logo"
+        >
           <img src={face} alt="facebook-icon" />
         </a>
-        <a href="#" className="bottom__logo">
+        <a
+          href="https://www.instagram.com/Kutxabank/"
+          target="_blank"
+          className="bottom__logo"
+        >
           <img src={insta} alt="insta-icon" />
         </a>
-        <a href="#" className="bottom__logo">
+        <a
+          href="https://x.com/Kutxabank"
+          target="_blank"
+          className="bottom__logo"
+        >
           <img src={twitter} alt="twitter-icon" />
         </a>
-        <a href="#" className="bottom__logo">
+        <a
+          href="https://www.youtube.com/@Kutxabank"
+          target="_blank"
+          className="bottom__logo"
+        >
           <img src={youtube} alt="youtube-icon" />
         </a>
-        <a href="#" className="bottom__logo">
+        <a
+          href="https://www.linkedin.com/company/kutxabank/"
+          target="_blank"
+          className="bottom__logo"
+        >
           <img src={likelind} alt="likelind-icon" />
         </a>
       </div>
