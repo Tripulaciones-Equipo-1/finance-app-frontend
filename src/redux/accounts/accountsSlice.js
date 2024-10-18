@@ -68,7 +68,7 @@ export const accountsSlice = createSlice({
         state.transactions = action.payload.transactions;
         state.isLoading = false;
         state.isSuccess = true;
-      });
+      })
   },
 });
 

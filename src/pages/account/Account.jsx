@@ -8,10 +8,13 @@ import Topbar from "../../components/topbar/Topbar";
 import Loader from "../../components/loader/Loader";
 import MonthCard from "../../components/month-card/MonthCard";
 import TransactionList from "../../components/transaction-list/TransactionList";
+import TransactionForm from "../../components/transaction-form/TransactionFom";
+import CreateBtn from "../../components/create-btn/CreateBtn";
 
 import "./Account.scss";
 
 const Account = () => {
+  const [show, setShow] = useState(false);
   const params = useParams();
   const dispatch = useDispatch();
   const { transactions, isSuccess, isLoading } = useSelector(
@@ -65,6 +68,7 @@ const Account = () => {
   return (
     <AuthZone>
       <Loader loading={isLoading} />
+      <TransactionForm show={show} setShow={setShow} />
 
       <TransactionList
         show={showData}
@@ -96,6 +100,7 @@ const Account = () => {
             );
           })}
       </section>
+      <CreateBtn setShow={setShow} />
     </AuthZone>
   );
 };
