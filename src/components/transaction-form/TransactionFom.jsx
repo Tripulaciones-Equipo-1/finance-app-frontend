@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   createTransactions,
-  getTransactions,
   reset,
-} from "../../redux/accounts/accountsSlice";
+} from "../../redux/transactions/transactionsSlice"; //meter getTransactions
 import { useParams } from "react-router-dom";
+import { getTransactions } from "../../redux/accounts/accountsSlice";
 
 import Loader from "../loader/Loader";
 
@@ -15,7 +15,7 @@ const TransactionFom = ({ show, setShow }) => {
   const initialState = {
     concept: "",
     value: "",
-    category: "",
+    category: "Otros",
   };
 
   const [formData, setFormData] = useState(initialState);
@@ -23,13 +23,13 @@ const TransactionFom = ({ show, setShow }) => {
   const params = useParams();
   const dispatch = useDispatch();
   const { isSuccess, isLoading, message } = useSelector(
-    (state) => state.accounts,
+    (state) => state.transactions,
   );
 
   useEffect(() => {
     if (!isSuccess) return;
     dispatch(reset());
-    // dispatch(getTransactions(params.id));
+    dispatch(getTransactions(params.id));
     setShow(false);
   }, [isSuccess]);
 
@@ -43,11 +43,8 @@ const TransactionFom = ({ show, setShow }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (
-      (formData.concept === "", formData.value === "", formData.category === "")
-    )
-      return;
-    dispatch(createTransactions(formData));
+    if (formData.concept === "" && formData.value === "") return;
+    dispatch(createTransactions({ accountId: params.id, formData }));
   };
 
   const handleCancel = () => {
@@ -99,7 +96,7 @@ const TransactionFom = ({ show, setShow }) => {
                 </div> */}
 
                 <div className="transaction-form__buttons">
-                  <button type="submit" className="account-form__button">
+                  <button type="submit" className="transaction-form__button">
                     Aceptar
                   </button>
                   <button

@@ -22,19 +22,6 @@ export const createAccount = createAsyncThunk(
   },
 );
 
-export const createTransactions = createAsyncThunk(
-  "transction/create",
-  async (transactionId, { rejectWithValue }) => {
-    try {
-      return await accountsService.createTransactions(transactionId);
-    } catch (error) {
-      console.error("Create transaction error: ", error);
-      return rejectWithValue(error.response.data);
-    }
-  },
-);
-
-
 export const getTransactions = createAsyncThunk(
   "accounts/getTransactions",
   async (accountId, { rejectWithValue }) => {
@@ -82,16 +69,6 @@ export const accountsSlice = createSlice({
         state.isLoading = false;
         state.isSuccess = true;
       })
-      .addCase(createTransactions.pending, (state) => {
-        state.isLoading = true;
-      })
-      .addCase(createTransactions.fulfilled, (state, action) => {
-        console.log(action.payload);
-        state.account = action.payload.account;
-        state.isSuccess = true;
-      })
-
-
   },
 });
 
