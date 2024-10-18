@@ -5,7 +5,7 @@ import incomeIcon from "../assets/icons/money-bill-wave.svg";
 
 export const categories = {
   Ocio: { color: "#e39d07", icon: funIcon },
-  Coche: { color: "#007a87", icon: carIcon },
+  Coche: { color: "#076ee3", icon: carIcon },
   Salud: { color: "#c50405", icon: healthIcon },
-  Ingreso: { color: "#19171c", icon: incomeIcon },
+  Ingreso: { color: "#007a87", icon: incomeIcon },
 };

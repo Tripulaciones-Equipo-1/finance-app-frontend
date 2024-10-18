@@ -1,0 +1,33 @@
+.transaction-details {
+  &__section {
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    color: $ternary-text-color;
+    background-color: $secondary-color;
+  }
+
+  &__data {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+
+    font-size: 14px;
+    color: $gray-dark;
+  }
+
+  &__data-name {
+    font-weight: bold;
+  }
+
+  &__positive {
+    font-weight: bold;
+    color: $secondary-color;
+  }
+
+  &__negative {
+    font-weight: bold;
+    color: $primary-color;
+  }
+}
