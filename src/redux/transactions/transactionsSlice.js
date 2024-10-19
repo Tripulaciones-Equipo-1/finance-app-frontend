@@ -23,6 +23,18 @@ export const createTransactions = createAsyncThunk(
   },
 );
 
+export const updateTransaction = createAsyncThunk(
+  "transactions/update",
+  async (transactionData, { rejectWithValue }) => {
+    try {
+      return await transactionsService.updateTransaction(transactionData);
+    } catch (error) {
+      console.error("Create transaction error: ", error);
+      return rejectWithValue(error.response.data);
+    }
+  },
+);
+
 export const getLatest = createAsyncThunk(
   "transactions/getLatest",
   async (thunkAPI) => {
@@ -64,8 +76,14 @@ export const transactionsSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(createTransactions.fulfilled, (state, action) => {
-        console.log(action.payload);
-        state.account = action.payload.account;
+        state.transaction = action.payload.transaction;
+        state.isSuccess = true;
+      })
+      .addCase(updateTransaction.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(updateTransaction.fulfilled, (state, action) => {
+        state.transaction = action.payload;
         state.isSuccess = true;
       })
       .addCase(getLatest.pending, (state) => {
@@ -80,7 +98,7 @@ export const transactionsSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(getById.fulfilled, (state, action) => {
-        state.data = action.payload;
+        state.transaction = action.payload;
         state.isLoading = false;
         state.isSuccess = true;
       });

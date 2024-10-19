@@ -7,10 +7,25 @@ const createTransactions = async (transactionData) => {
   const token = JSON.parse(localStorage.getItem("token"));
   const { accountId, formData } = transactionData;
 
-  console.log(transactionData);
-
   const res = await axios.post(
     `${API_URL}/transaction/id/${accountId}`,
+    formData,
+    {
+      headers: {
+        authorization: token,
+      },
+    },
+  );
+
+  return res.data;
+};
+
+const updateTransaction = async (transactionData) => {
+  const token = JSON.parse(localStorage.getItem("token"));
+  const { transactionId, formData } = transactionData;
+
+  const res = await axios.put(
+    `${API_URL}/transaction/id/${transactionId}`,
     formData,
     {
       headers: {
@@ -48,6 +63,7 @@ const getById = async (transactionId) => {
 
 const transactionsService = {
   createTransactions,
+  updateTransaction,
   getLatest,
   getById,
 };
