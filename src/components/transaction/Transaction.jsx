@@ -5,19 +5,17 @@ import "./Transaction.scss";
 
 const Transaction = ({ _id, concept, value, category, date }) => {
   const [_, month, day] = date.split(/[-T:. ]/);
+  const { color, icon } = categories[category] || categories["Otros"];
 
   return (
     <a
       href={`/transaction/${_id}`}
       className="transaction"
-      style={{ borderColor: categories[category].color }}
+      style={{ borderColor: color }}
     >
       <div className="transaction__container">
-        <div
-          className="transaction__icon"
-          style={{ backgroundColor: categories[category].color }}
-        >
-          <img src={categories[category].icon} alt="transaction icon" />
+        <div className="transaction__icon" style={{ backgroundColor: color }}>
+          <img src={icon} alt="transaction icon" />
         </div>
 
         <p className="transaction__date">

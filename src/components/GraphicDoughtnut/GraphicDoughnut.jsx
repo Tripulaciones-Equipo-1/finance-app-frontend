@@ -23,7 +23,7 @@ const GraphicDoughnut = ({ transactionsList }) => {
   const categoryObject = category_amount(transactionsList);
 
   const colors = Object.keys(categoryObject).map((cat) => {
-    return categories[cat].color;
+    return categories[cat] ? categories[cat].color : categories["Otros"].color;
   });
 
   const data = {
@@ -42,7 +42,7 @@ const GraphicDoughnut = ({ transactionsList }) => {
 
   Chart.defaults.color = "#19171c";
   Chart.defaults.plugins.legend.position = "bottom";
-  Chart.defaults.font.size = 18;
+  Chart.defaults.font.size = 15;
 
   return (
     <div className="graphic">
