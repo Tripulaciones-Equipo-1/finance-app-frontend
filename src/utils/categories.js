@@ -8,4 +8,5 @@ export const categories = {
   Coche: { color: "#076ee3", icon: carIcon },
   Salud: { color: "#c50405", icon: healthIcon },
   Ingreso: { color: "#007a87", icon: incomeIcon },
+  Otros: { color: "#4b4b4b", icon: null },
 };

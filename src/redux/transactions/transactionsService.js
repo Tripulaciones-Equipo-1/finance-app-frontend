@@ -22,8 +22,34 @@ const createTransactions = async (transactionData) => {
   return res.data;
 };
 
+const getLatest = async () => {
+  const token = JSON.parse(localStorage.getItem("token"));
+
+  const res = await axios.get(`${API_URL}/transaction/latest`, {
+    headers: {
+      authorization: token,
+    },
+  });
+
+  return res.data;
+};
+
+const getById = async (transactionId) => {
+  const token = JSON.parse(localStorage.getItem("token"));
+
+  const res = await axios.get(`${API_URL}/transaction/trans/${transactionId}`, {
+    headers: {
+      authorization: token,
+    },
+  });
+
+  return res.data;
+};
+
 const transactionsService = {
   createTransactions,
+  getLatest,
+  getById,
 };
 
 export default transactionsService;

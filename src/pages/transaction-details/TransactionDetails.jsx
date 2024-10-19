@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   getById,
   resetTransactions,
-} from "../../redux/transactions1/transactionsSlice";
+} from "../../redux/transactions/transactionsSlice";
 
 import AuthZone from "../../guards/AuthZone";
 import Loader from "../../components/loader/Loader";

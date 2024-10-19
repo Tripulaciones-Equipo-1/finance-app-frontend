@@ -5,7 +5,7 @@ import { getAccounts, reset } from "../../redux/users/usersSlice";
 import {
   getLatest,
   resetTransactions,
-} from "../../redux/transactions1/transactionsSlice";
+} from "../../redux/transactions/transactionsSlice";
 
 import AuthZone from "../../guards/AuthZone";
 import Topbar from "../../components/topbar/Topbar";

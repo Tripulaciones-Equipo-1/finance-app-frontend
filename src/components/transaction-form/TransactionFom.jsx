@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   createTransactions,
-  reset,
+  resetTransactions,
 } from "../../redux/transactions/transactionsSlice"; //meter getTransactions
 import { useParams } from "react-router-dom";
 import { getTransactions } from "../../redux/accounts/accountsSlice";
@@ -28,7 +28,7 @@ const TransactionFom = ({ show, setShow }) => {
 
   useEffect(() => {
     if (!isSuccess) return;
-    dispatch(reset());
+    dispatch(resetTransactions());
     dispatch(getTransactions(params.id));
     setShow(false);
   }, [isSuccess]);
