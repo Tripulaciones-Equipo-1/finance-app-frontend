@@ -5,11 +5,12 @@
 }
 
 .transaction-list {
-  position: absolute;
+  position: fixed;
+  overflow: scroll;
   z-index: 2;
   transform: translateY(100%);
 
-  height: 100vh;
+  height: 100%;
   width: 100%;
 
   background-color: $background-color;
@@ -55,5 +56,34 @@
       color: $ternary-text-color;
       background-color: $secondary-color;
     }
+  }
+
+  &__data {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8px 10px;
+    margin-bottom: 10px;
+
+    color: $secondary-text-color;
+    border-bottom: 2px solid $secondary-text-color;
+
+    p {
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+
+  &__income,
+  &__costs {
+    font-weight: bold;
+  }
+
+  &__income {
+    color: $secondary-color;
+  }
+
+  &__costs {
+    color: $primary-color;
   }
 }
