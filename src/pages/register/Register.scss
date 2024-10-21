@@ -7,7 +7,7 @@
   &__container {
     width: 100%;
     max-width: 500px;
-    transform: translate(0, -15%);
+    // transform: translate(0, -15%);
   }
 
   &__title {
@@ -53,7 +53,7 @@
   }
 
   &__submit {
-    margin-top: 20px;
+    margin-top: 10px;
     padding: 15px;
 
     font-size: 16px;

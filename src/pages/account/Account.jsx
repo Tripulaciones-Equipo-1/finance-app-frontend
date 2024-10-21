@@ -68,6 +68,7 @@ const Account = () => {
   return (
     <AuthZone>
       <Loader loading={isLoading} />
+
       <TransactionForm show={show} setShow={setShow} />
 
       <TransactionList
@@ -120,6 +121,7 @@ const Account = () => {
             );
           })}
       </section>
+
       <CreateBtn setShow={setShow} />
     </AuthZone>
   );

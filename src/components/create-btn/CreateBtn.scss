@@ -1,7 +1,7 @@
 .create-btn {
-  position: absolute;
+  position: fixed;
   right: 15px;
-  bottom: 15px;
+  bottom: 70px;
   z-index: 1;
   display: flex;
   justify-content: center;
@@ -11,6 +11,7 @@
   height: 50px;
 
   border-radius: 100%;
+  border: 2px solid $background-color-focus;
   background-color: $secondary-color;
 
   img {
