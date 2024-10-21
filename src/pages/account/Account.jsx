@@ -79,7 +79,7 @@ const Account = () => {
 
       <Topbar path={"/accounts"} />
 
-      <section>
+      <section className="account">
         <div className="account__details">
           <p className="account__section">Información general</p>
           <div className="account__data">
