@@ -1,5 +1,5 @@
 .transaction-form {
-  position: absolute;
+  position: fixed;
   z-index: 2;
   display: flex;
   justify-content: center;
@@ -40,7 +40,6 @@
     align-items: center;
     gap: 8px;
     margin-top: 15px;
-   
 
     label {
       font-size: 16px;
@@ -69,7 +68,6 @@
   &__button {
     width: 100%;
     padding: 10px;
-   
 
     font-weight: bold;
 
