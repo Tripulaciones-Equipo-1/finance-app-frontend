@@ -9,7 +9,7 @@ import compassIcon from "../../assets/icons/compass.svg";
 import compassFillIcon from "../../assets/icons/compass-fill.svg";
 import interrogationIcon from "../../assets/icons/interrogation.svg";
 import interrogationFillIcon from "../../assets/icons/interrogation-fill.svg";
-import menuIcon from "../../assets/icons/menu.svg";
+import logoutIcon from "../../assets/icons/logout.svg"
 import menuFillIcon from "../../assets/icons/menu-fill.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { logout, reset } from "../../redux/auth/authSlice";
@@ -99,7 +99,7 @@ const Navbar = () => {
 
       <a href="#" onClick={clickLogout} className="navbar__link">
         <img
-          src={location.pathname === "/" ? menuFillIcon : menuIcon}
+          src={location.pathname === "/" ? menuFillIcon : logoutIcon}
           alt="house icon"
           className="navbar__icon"
         />
@@ -108,7 +108,7 @@ const Navbar = () => {
             location.pathname === "/" && "navbar__text--highlight"
           }`}
         >
-          Más
+          Salir
         </p>
       </a>
     </nav>
