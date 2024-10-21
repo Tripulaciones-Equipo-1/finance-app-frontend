@@ -42,6 +42,7 @@ const GraphicDoughnut = ({ transactionsList }) => {
 
   Chart.defaults.color = "#19171c";
   Chart.defaults.plugins.legend.position = "bottom";
+  Chart.defaults.font.size = 15;
 
   return (
     <div className="graphic">
