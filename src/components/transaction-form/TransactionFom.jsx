@@ -30,6 +30,7 @@ const TransactionFom = ({ show, setShow }) => {
     if (!isSuccess) return;
     dispatch(resetTransactions());
     dispatch(getTransactions(params.id));
+    setFormData(initialState);
     setShow(false);
   }, [isSuccess]);
 
@@ -48,6 +49,7 @@ const TransactionFom = ({ show, setShow }) => {
   };
 
   const handleCancel = () => {
+    setFormData(initialState);
     setShow(false);
   };
 

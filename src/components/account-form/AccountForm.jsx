@@ -23,6 +23,7 @@ const AccountForm = ({ show, setShow }) => {
     if (!isSuccess) return;
     dispatch(reset());
     dispatch(getAccounts());
+    setFormData(initialState);
     setShow(false);
   }, [isSuccess]);
 
@@ -41,6 +42,7 @@ const AccountForm = ({ show, setShow }) => {
   };
 
   const handleCancel = () => {
+    setFormData(initialState);
     setShow(false);
   };
 
