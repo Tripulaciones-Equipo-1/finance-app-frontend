@@ -24,7 +24,9 @@ const Login = () => {
   useEffect(() => {
     if (!isSuccess) return;
     dispatch(reset());
-    user.role === "admin" ? navigate("/admin/users") : navigate("/accounts");
+    user && user.role === "admin"
+      ? navigate("/admin/users")
+      : navigate("/accounts");
   }, [isSuccess]);
 
   // HANDLERS
