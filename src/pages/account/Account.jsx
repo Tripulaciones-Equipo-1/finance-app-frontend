@@ -93,7 +93,7 @@ const Account = () => {
           <div className="account__data">
             <p className="account__data-name">Saldo</p>
             <p>
-              {data &&
+              {data.balance &&
                 data.balance.toLocaleString("es", {
                   useGrouping: true,
                   minimumFractionDigits: 2,
