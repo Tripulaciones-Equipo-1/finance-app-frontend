@@ -63,7 +63,12 @@ const Accounts = () => {
                   <p className="accounts__id">{acc._id}</p>
                 </div>
                 <p className="accounts__balance">
-                  {acc.balance.toLocaleString("en", { useGrouping: true })}€
+                  {acc.balance.toLocaleString("es", {
+                    useGrouping: true,
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,
+                  })}
+                  €
                 </p>
               </div>
             ))}

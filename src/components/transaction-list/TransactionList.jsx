@@ -35,11 +35,25 @@ const TransactionList = ({ show, setShow, transactions }) => {
           <div className="transaction-list__data">
             <p>
               Ingresos:{" "}
-              <span className="transaction-list__income">{incomeTotal}€</span>
+              <span className="transaction-list__income">
+                {incomeTotal.toLocaleString("es", {
+                  useGrouping: true,
+                  minimumFractionDigits: 2,
+                  maximumFractionDigits: 2,
+                })}
+                €
+              </span>
             </p>
             <p>
               Gastos:{" "}
-              <span className="transaction-list__costs">{costsTotal}€</span>
+              <span className="transaction-list__costs">
+                {costsTotal.toLocaleString("es", {
+                  useGrouping: true,
+                  minimumFractionDigits: 2,
+                  maximumFractionDigits: 2,
+                })}
+                €
+              </span>
             </p>
           </div>
 

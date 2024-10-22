@@ -20,16 +20,37 @@ const MonthCard = ({ year, month, data, handleClick }) => {
             dif > 0 ? "--income" : "--cost"
           }`}
         >
-          {dif}€
+          {dif.toLocaleString("es", {
+            useGrouping: true,
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2,
+          })}
+          €
         </p>
       </div>
 
       <div className="month-card__data">
         <p>
-          Ingresos: <span className="month-card__income">{income}€</span>
+          Ingresos:{" "}
+          <span className="month-card__income">
+            {income.toLocaleString("es", {
+              useGrouping: true,
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2,
+            })}
+            €
+          </span>
         </p>
         <p>
-          Gastos: <span className="month-card__costs">{costs}€</span>
+          Gastos:{" "}
+          <span className="month-card__costs">
+            {costs.toLocaleString("es", {
+              useGrouping: true,
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2,
+            })}
+            €
+          </span>
         </p>
       </div>
     </div>
