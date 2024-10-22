@@ -2,12 +2,39 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import usersService from "./usersService";
 
 const initialState = {
+  users: [],
+  user: {},
   accounts: [],
   isLoading: false,
   isError: false,
   isSuccess: false,
   message: "",
 };
+
+export const getAllUsers = createAsyncThunk(
+  "users/getAll",
+  async (thunkAPI) => {
+    try {
+      return await usersService.getAllUsers();
+    } catch (error) {
+      console.error("Get users error: ", error);
+      return thunkAPI.rejectWithValue(error.response.data);
+    }
+  },
+);
+
+export const updateUser = createAsyncThunk(
+  "users/update",
+  async (userData, thunkAPI) => {
+    try {
+      const { userId, formData } = userData;
+      return await usersService.updateUser(userId, formData);
+    } catch (error) {
+      console.error("Update user error: ", error);
+      return thunkAPI.rejectWithValue(error.response.data);
+    }
+  },
+);
 
 export const getAccounts = createAsyncThunk(
   "users/getAccounts",
@@ -34,6 +61,22 @@ export const usersSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
+      .addCase(getAllUsers.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(getAllUsers.fulfilled, (state, action) => {
+        state.users = action.payload;
+        state.isLoading = false;
+        state.isSuccess = true;
+      })
+      .addCase(updateUser.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(updateUser.fulfilled, (state, action) => {
+        state.user = action.payload;
+        state.isLoading = false;
+        state.isSuccess = true;
+      })
       .addCase(getAccounts.pending, (state) => {
         state.isLoading = true;
       })

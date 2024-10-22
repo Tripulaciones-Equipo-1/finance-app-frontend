@@ -8,7 +8,7 @@ import Register from "./pages/register/Register";
 import Accounts from "./pages/accounts/Accounts";
 import Account from "./pages/account/Account";
 import TransactionDetails from "./pages/transaction-details/TransactionDetails";
-import AdminUsers from "./pages/admin/users/AdminUsers";
+import AdminUsers from "./pages/admin-users/AdminUsers";
 
 function App() {
   return (

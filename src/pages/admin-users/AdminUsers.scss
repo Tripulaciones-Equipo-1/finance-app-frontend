@@ -1,0 +1,54 @@
+.admin-user {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  &__card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 10px;
+
+    text-align: center;
+
+    background-color: $background-color-focus;
+    box-shadow: 0 4px 2px -2px $gray-light;
+  }
+
+  &__name {
+    font-weight: bold;
+  }
+
+  &__role {
+    font-weight: bold;
+    color: $secondary-text-color;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 5px;
+  }
+
+  &__edit,
+  &__delete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+    font-weight: bold;
+    border-radius: 10px;
+
+    img {
+      width: 15px;
+    }
+  }
+
+  &__edit {
+    background-color: $secondary-color;
+  }
+
+  &__delete {
+    background-color: $primary-color;
+  }
+}
