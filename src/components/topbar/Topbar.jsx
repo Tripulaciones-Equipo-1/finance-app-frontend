@@ -15,7 +15,7 @@ const Topbar = ({ path, title }) => {
         </a>
       )}
       {title ? (
-        <>
+        <div className="topbar__container">
           <p className="topbar__text">{title}</p>
           <a
             href="https://portal.kutxabank.es/cs/Satellite/kb/es/particulares"
@@ -23,20 +23,17 @@ const Topbar = ({ path, title }) => {
           >
             <img src={logo} alt="kutxabank logo" className="topbar__logo" />
           </a>
-        </>
+        </div>
       ) : (
-        <>
+        <div className="topbar__container">
           <a
             href="https://portal.kutxabank.es/cs/Satellite/kb/es/particulares"
             target="_blank"
           >
-            <img
-              src={logoBanner}
-              alt="kutxabank logo"
-              className="topbar__icon"
-            />
+            <img src={logo} alt="kutxabank logo" className="topbar__icon" />
+            <p>utxaCiclo</p>
           </a>
-        </>
+        </div>
       )}
     </section>
   );

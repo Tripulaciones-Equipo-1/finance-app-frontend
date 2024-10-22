@@ -30,13 +30,35 @@
     color: $ternary-text-color;
   }
 
+  &__container {
+    display: flex;
+    align-items: center;
+
+    font-size: 18px;
+
+    a {
+      display: flex;
+      // gap: 3px;
+      align-items: baseline;
+
+      p {
+        color: $ternary-text-color;
+      }
+    }
+  }
+
   &__logo {
     position: absolute;
+    margin-top: auto;
     right: 10px;
+    margin-bottom: auto;
+    top: 0;
+    bottom: 0;
     height: 30px;
   }
 
   &__icon {
     height: 30px;
+    transform: translateY(1px);
   }
 }
