@@ -10,7 +10,7 @@ import Loader from "../../components/loader/Loader";
 import "./Register.scss";
 
 // Ref: https://stackoverflow.com/questions/5658899/can-anyone-tell-me-the-regex-for-excluding-numbers-and-special-characters-in-asp
-const regexText = /^[a-zA-Z]*$/;
+const regexText = /^[a-zA-Z\s]*$/;
 // Ref: https://stackoverflow.com/questions/46155/how-can-i-validate-an-email-address-in-javascript
 const regexEmail = /^\S+@\S+\.\S+$/;
 // Ref: https://stackoverflow.com/questions/19605150/regex-for-password-must-contain-at-least-eight-characters-at-least-one-number-a

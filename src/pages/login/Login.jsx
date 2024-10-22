@@ -17,14 +17,14 @@ const Login = () => {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { isSuccess, isError, isLoading, message } = useSelector(
+  const { user, isSuccess, isError, isLoading, message } = useSelector(
     (state) => state.auth,
   );
 
   useEffect(() => {
     if (!isSuccess) return;
     dispatch(reset());
-    navigate("/accounts");
+    user.role === "admin" ? navigate("/admin/users") : navigate("/accounts");
   }, [isSuccess]);
 
   // HANDLERS
