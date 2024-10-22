@@ -11,6 +11,7 @@ import editIcon from "../../assets/icons/edit.svg";
 import deleteIcon from "../../assets/icons/trash.svg";
 
 import "./AdminUsers.scss";
+import UserDelete from "../../components/user-delete/UserDelete.jsx";
 
 const AdminUsers = () => {
   const initialState = {
@@ -57,6 +58,12 @@ const AdminUsers = () => {
           userData={selectedUser}
           editing={editing}
           setEditing={setEditing}
+        />
+
+        <UserDelete
+          userData={selectedUser}
+          deleting={deleting}
+          setDeleting={setDeleting}
         />
 
         <section className="admin-user">

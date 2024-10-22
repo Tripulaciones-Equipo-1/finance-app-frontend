@@ -59,7 +59,7 @@ const TransactionEdit = ({ show, setShow }) => {
           <div className="transaction-edit">
             <div className="transaction-edit__back" />
             <div className="transaction-edit__container">
-              <p className="transaction-edit__title">Abrir nueva cuenta</p>
+              <p className="transaction-edit__title">Editar transacción</p>
               <p className="transaction-edit__error">{message}</p>
               <form onSubmit={handleSubmit}>
                 <div className="transaction-edit__input">

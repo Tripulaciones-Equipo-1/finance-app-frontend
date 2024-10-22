@@ -27,6 +27,18 @@ const updateUser = async (userId, userData) => {
   return res.data;
 };
 
+const deleteUser = async (userId) => {
+  const token = JSON.parse(localStorage.getItem("token"));
+
+  const res = await axios.delete(`${API_URL}/users/id/${userId}`, {
+    headers: {
+      authorization: token,
+    },
+  });
+
+  return res.data;
+};
+
 const getAccounts = async () => {
   const token = JSON.parse(localStorage.getItem("token"));
 
@@ -42,6 +54,7 @@ const getAccounts = async () => {
 const usersService = {
   getAllUsers,
   updateUser,
+  deleteUser,
   getAccounts,
 };
 

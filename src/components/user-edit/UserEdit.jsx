@@ -47,7 +47,7 @@ const UserEdit = ({ userData, editing, setEditing }) => {
           <div className="user-edit">
             <div className="user-edit__back" />
             <div className="user-edit__container">
-              <p className="user-edit__title">Abrir nueva cuenta</p>
+              <p className="user-edit__title">Editar Usuario</p>
               <p className="user-edit__error">{message}</p>
               <form onSubmit={handleSubmit}>
                 <div className="user-edit__input">

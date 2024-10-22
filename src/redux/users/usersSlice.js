@@ -36,6 +36,18 @@ export const updateUser = createAsyncThunk(
   },
 );
 
+export const deleteUser = createAsyncThunk(
+  "users/delete",
+  async (userId, thunkAPI) => {
+    try {
+      return await usersService.deleteUser(userId);
+    } catch (error) {
+      console.error("Update user error: ", error);
+      return thunkAPI.rejectWithValue(error.response.data);
+    }
+  },
+);
+
 export const getAccounts = createAsyncThunk(
   "users/getAccounts",
   async (thunkAPI) => {
@@ -73,6 +85,14 @@ export const usersSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(updateUser.fulfilled, (state, action) => {
+        state.user = action.payload;
+        state.isLoading = false;
+        state.isSuccess = true;
+      })
+      .addCase(deleteUser.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(deleteUser.fulfilled, (state, action) => {
         state.user = action.payload;
         state.isLoading = false;
         state.isSuccess = true;
