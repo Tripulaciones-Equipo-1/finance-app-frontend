@@ -84,11 +84,12 @@ const TransactionDetails = () => {
                   : "transaction-details__negative"
               }
             >
-              {transaction.value.toLocaleString("es", {
-                useGrouping: true,
-                minimumFractionDigits: 2,
-                maximumFractionDigits: 2,
-              })}
+              {transaction &&
+                transaction.value.toLocaleString("es", {
+                  useGrouping: true,
+                  minimumFractionDigits: 2,
+                  maximumFractionDigits: 2,
+                })}
               €
             </p>
           </div>
