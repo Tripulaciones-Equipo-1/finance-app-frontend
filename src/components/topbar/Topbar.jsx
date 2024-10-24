@@ -31,7 +31,7 @@ const Topbar = ({ path, title }) => {
             target="_blank"
           >
             <img src={logo} alt="kutxabank logo" className="topbar__icon" />
-            <p>utxaCiclo</p>
+            <p>utxaCiclos</p>
           </a>
         </div>
       )}
